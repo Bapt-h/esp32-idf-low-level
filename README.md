@@ -14,7 +14,7 @@ Contrairement à un projet monolithique, ce dépôt utilise une architecture en 
 ### Structure du dépôt
 
 ```text
-
+/
 ├── .gitignore               # Exclusion des dossiers de build et données sensibles
 ├── README.md                # Documentation globale (ce fichier)
 ├── LICENSE                  # Licence MIT
@@ -51,15 +51,15 @@ Pour garantir un environnement reproductible, la chaîne de compilation est cont
 ### 1. Prérequis
 
 - Docker Desktop (actif en arrière-plan)
-- Python 3 et l'outil esptool
-- Un câble USB de transfert de données (attention aux câbles servant uniquement à la charge)
+- Python 3 et l'outil `esptool`
+- Un câble USB de transfert de données
 
 ### 2. Installation
 
 Clonez ce dépôt sur votre machine locale :
 
 ```bash
-git clone [https://github.com/](https://github.com/)[TON-PSEUDO]/esp32-idf-low-level.git
+git clone https://github.com/Bapt-h/esp32-idf-low-level.git
 cd esp32-idf-low-level
 ```
 
@@ -71,7 +71,7 @@ Déplacez-vous impérativement dans le dossier du projet que vous souhaitez comp
 cd 01_blink
 
 # Lancement de la compilation
-docker run --rm -v "$PWD":/project -w /project espressif/idf:release-v5.1 idf.py build
+docker run --rm -v "$PWD":/project -w /project espressif/idf:release-v5.2 idf.py build
 ```
 
 ### 4. Envoi et exécution (Flash)
@@ -81,7 +81,7 @@ Identifiez le port série attribué à votre carte (ex: /dev/cu.usbserial-110 ou
 idf.py -p /dev/cu.usbserial-110 flash monitor
 ```
 
-(Utilisez Ctrl+] pour quitter le moniteur série).
+(Utilisez `Ctrl+]` pour quitter le moniteur série).
 
 ## 🛠️ Comment travailler avec ce dépôt
 
